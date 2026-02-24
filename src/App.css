@@ -44,7 +44,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.board {
+/* .board {
   display: flex;
   gap: 20px;
   padding: 20px;
@@ -69,5 +69,20 @@ body {
 
 .column h2 {
   text-align: center;
+} */
+ /* .App {
+ background-color: aquamarine;
+ } */
+.add-btns-grp {
+  display: flex;
+  gap: 10px;
 }
-/* Additional styles for the Kanban board can be added here */
+.custom-modal-footer {
+ justify-content: flex-start !important;
+}
+.modal-validations li {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+  font-weight: 500;
+}
