@@ -76,10 +76,11 @@ export default function KanbanBoard() {
             setErrTodoMessage("Task title must be between 3 and 20 characters");
             return;
         }
-        else if (checkBoxOptions.length === 0) {
-            setErrCheckBoxMessage("At least one checkbox must be selected");
+        else if (checkBoxOptions.length === 0 || checkBoxOptions.length > 1) {
+            setErrCheckBoxMessage("Please select only one checkbox");
             return;
         }
+        
         const newTask = {
             id: Date.now(),
             title: todo
