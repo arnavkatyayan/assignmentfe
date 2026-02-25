@@ -33,7 +33,7 @@ function HomePage() {
 
 
 
-                <Button variant="primary" onClick={() => navigate("/treeview")}>Go to Tree View</Button>
+                <Button variant="success" onClick={() => navigate("/treeview")}>Go to Tree View</Button>
             </div>
             <div className="kanban-board-comp kanban-board-bg">
                 <h3>📋 Kanban Board (Ques 2)</h3>
@@ -60,7 +60,7 @@ function HomePage() {
                 </ul>
                 
                 <hr/>
-                <Button variant="success" onClick={() => navigate("/kanban")}>Go to Kanban Board</Button>
+                <Button variant="primary" onClick={() => navigate("/kanban")}>Go to Kanban Board</Button>
             </div>
         </div>
     )

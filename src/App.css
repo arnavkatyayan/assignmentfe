@@ -89,17 +89,20 @@ body {
 .tree-view-comp, .kanban-board-comp {
     height: 73vh;
     width: 19vw;
+    margin-top: -22px;
 }
 .tree-view-bg {
   background: linear-gradient(135deg, #e3f2fd, #bbdefb);
   border-radius: 12px;
   padding: 20px;
+  overflow: auto;
 }
 
 .kanban-board-bg {
   background: linear-gradient(135deg, #f3e5f5, #e1bee7);
   border-radius: 12px;
   padding: 20px;
+  overflow: auto;
 }
 .home-page-headers span {
   font-weight: 600;

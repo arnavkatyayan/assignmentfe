@@ -40,9 +40,9 @@
   background-color: #e0e7ff;
 }
 
-.add-btn:hover {
+/* .add-btn:hover {
   color: green;
-}
+} */
 
 .delete-btn:hover {
   color: red;
@@ -63,4 +63,11 @@
 }
 .tree-view-width {
     width:35vw;
+}
+/* .tree-data {
+    position: relative;
+    top:50px;
+} */
+.tree-view-hr {
+    margin-top:69px;
 }

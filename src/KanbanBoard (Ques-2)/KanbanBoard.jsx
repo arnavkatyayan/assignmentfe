@@ -199,7 +199,7 @@ export default function KanbanBoard() {
     return (
 
         <div className="kanban-board-main">
-            <h1 className="text-2xl font-bold">Kanban Board</h1>
+            <h1 className="text-2xl font-bold">📋 Kanban Board</h1>
             <ul className="instructions">
                 <li>1) Drag and drop tasks between columns <span className="font-bold">(Some tasks are added as sample).</span></li>
                 <li>2) Click the button at the bottom to add a new task</li>

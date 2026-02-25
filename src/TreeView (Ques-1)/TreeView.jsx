@@ -29,7 +29,11 @@ export default function TreeView() {
         if (name.trim() === "") {
             setErrNameMessage("Name cannot be empty");
             return;
-        }       
+        }
+        if(name.length < 3 || name.length > 20) {
+            setErrNameMessage("Name must be between 3 and 20 characters");
+            return;
+        }      
         const newNode = {
             id: Date.now(),
             name,
@@ -82,7 +86,17 @@ const deleteNode = async (id) => {
     return (
         <div style={{ padding: "20px" }}>
             <div className="tree-view-main tree-view-width">
-            <h2>📁 Tree View</h2>
+            <h2>🌳 Tree View</h2>
+            <ul className="instructions">
+                <li>1) Click the ▶ icon to expand a node and ▼ to collapse.</li>
+                <li>2) Click the 📄 icon to identify leaf nodes.</li>
+                <li>3) Use the ➕ icon to add a child node to any existing node.</li>
+                <li>4) Use the 🗑 icon to delete a node and all its children.</li>
+                <li>5) Tree state is saved in Session Storage, so your changes persist on refresh.</li>
+                <li>6) Sample data is pre-loaded in the tree view.</li>
+            </ul>
+            <hr className="tree-view-hr"/>
+            <div className="tree-data">
             {treeData.map((node) => (
                 <TreeNode
                     key={node.id}
@@ -91,6 +105,7 @@ const deleteNode = async (id) => {
                     deleteNode={deleteNode}
                 />
             ))}
+            </div>
             <AddTodo show={showAddModal} title="Add New Node" setName={setName} name={name} errTodo={errNameMessage} handleClose={() => setShowAddModal(false)} isTreeView={true} todo={name} setTodo={setName} handleSave={handleSave} handleReset={handleReset} />
         </div>
         </div>

@@ -45,12 +45,12 @@ const AddTodo = ({ show, handleClose, title, body, handleSave, todo, setTodo, ha
                 <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                {!isTreeView ? 
+            
                 <ul className="modal-validations">
-                    <li>All fields are mandatory</li>
+                    <li>{isTreeView ? "Node field is mandatory" : "All fields are mandatory"}</li>
                     <li>Min len 3 characters</li>
                     <li>Max len 20 characters</li>
-                </ul>:null }
+                </ul>
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label className="text-2xl">{isTreeView ? "Node Name" : "Task Title"}</Form.Label>
