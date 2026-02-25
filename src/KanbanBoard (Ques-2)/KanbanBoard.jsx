@@ -145,17 +145,30 @@ export default function KanbanBoard() {
         }
     };
 
-    const handleResetBoard = () => {
+    const handleResetBoard = async () => {
+        const result = await Swal.fire({
+            title: "Reset Board?",
+            text: "All tasks will be permanently removed!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, reset it",
+            cancelButtonText: "Cancel",
+        });
 
+        if (result.isConfirmed) {
+            const emptyBoard = {
+                todo: [],
+                Progress: [],
+                done: []
+            };
 
-        const emptyBoard = {
-            todo: [],
-            Progress: [],
-            done: []
-        };
+            setBoard(emptyBoard);
+            sessionStorage.removeItem("kanbanBoard");
 
-        setBoard(emptyBoard);
-        sessionStorage.removeItem("kanbanBoard");
+            Swal.fire("Reset!", "Your board has been cleared.", "success");
+        }
     };
 
     const handleSaveEditTodo = () => {
@@ -220,7 +233,8 @@ export default function KanbanBoard() {
                                     >
                                         {task.title}
                                         <div className="icons">
-                                            <button onClick={() => handleDeleteTask(task.id, column)}>🗑</button>
+                                            {/* <button onClick={() => handleDeleteTask(task.id, column)}>🗑</button> */}
+                                            <img src={DeleteIcon} alt="Delete" className="delete-icon" onClick={() => handleDeleteTask(task.id, column)} />
                                         </div>
                                     </div>
                                 </div>

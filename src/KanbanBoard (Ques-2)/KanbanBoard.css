@@ -103,3 +103,7 @@
     width:10vw;
     margin-top: -20px;
 }
+.delete-icon {
+    height: 17px;
+    cursor: pointer;
+}

@@ -37,36 +37,63 @@ const initialDataTreeView = [
     ]
   }
 ];
-const AddTodo = ({ show, handleClose, title, body, handleSave, todo, setTodo, handleCheckBox, checkBoxOptions, errTodo, errCheckBox, handleReset }) => {
+//sessionStorage.setItem("treeViewData", JSON.stringify(initialDataTreeView));
+const AddTodo = ({ show, handleClose, title, body, handleSave, todo, setTodo, handleCheckBox, checkBoxOptions, errTodo, errCheckBox, handleReset, isTreeView }) => {
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
+                {!isTreeView ? 
                 <ul className="modal-validations">
                     <li>All fields are mandatory</li>
                     <li>Min len 3 characters</li>
                     <li>Max len 20 characters</li>
-                </ul>
+                </ul>:null }
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label className="text-2xl">Task Title</Form.Label>
-                        <Form.Control type="text" placeholder="Enter task title" value={todo} onChange={(e) => setTodo(e.target.value)} />
+                        <Form.Label className="text-2xl">{isTreeView ? "Node Name" : "Task Title"}</Form.Label>
+                        <Form.Control type="text" placeholder={isTreeView ? "Enter node name" : "Enter task title"} value={todo} onChange={(e) => setTodo(e.target.value)} />
                         {errTodo && <div className="text-danger">{errTodo}</div>}
-                        <div className="flex gap-1.5 mt-2 add-todo-checkboxes">
-                            <Form.Check type="checkbox" label="📌 ToDo" value="todo" onChange={handleCheckBox} checked={checkBoxOptions.includes("todo")}/>
-                            <Form.Check type="checkbox" label="⏳ Progress" value="Progress" onChange={handleCheckBox} checked={checkBoxOptions.includes("Progress")}/>
-                            <Form.Check type="checkbox" label="✅ Done" value="done" onChange={handleCheckBox} checked={checkBoxOptions.includes("done")}/>
-                        </div>
-                        {errCheckBox && <div className="text-danger">{errCheckBox}</div>}
+                        {!isTreeView && (
+                            <>
+                                <div className="flex gap-1.5 mt-2 add-todo-checkboxes">
+                                    <Form.Check
+                                        type="checkbox"
+                                        label="📌 ToDo"
+                                        value="todo"
+                                        onChange={handleCheckBox}
+                                        checked={checkBoxOptions?.includes("todo")}
+                                    />
+                                    <Form.Check
+                                        type="checkbox"
+                                        label="⏳ Progress"
+                                        value="Progress"
+                                        onChange={handleCheckBox}
+                                        checked={checkBoxOptions?.includes("Progress")}
+                                    />
+                                    <Form.Check
+                                        type="checkbox"
+                                        label="✅ Done"
+                                        value="done"
+                                        onChange={handleCheckBox}
+                                        checked={checkBoxOptions?.includes("done")}
+                                    />
+                                </div>
+
+                                {errCheckBox && (
+                                    <div className="text-danger">{errCheckBox}</div>
+                                )}
+                            </>
+                        )}
                     </Form.Group>
                 </Form>
             </Modal.Body>
             <Modal.Footer className="custom-modal-footer">
                 <div className="add-btns-grp">
                 <Button variant="success" onClick={handleSave}>
-                    Save Todo
+                    {isTreeView ? "Add Node" : "Save Todo"}
 
                 </Button>
                 <Button variant="danger" onClick={handleReset}>
@@ -78,4 +105,4 @@ const AddTodo = ({ show, handleClose, title, body, handleSave, todo, setTodo, ha
     );
 }
 
-export { initialData, AddTodo};
+export { initialData, AddTodo, initialDataTreeView};

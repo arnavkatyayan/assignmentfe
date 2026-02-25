@@ -87,7 +87,7 @@ body {
   font-weight: 500;
 }
 .tree-view-comp, .kanban-board-comp {
-    height: 57vh;
+    height: 73vh;
     width: 19vw;
 }
 .tree-view-bg {
@@ -100,4 +100,7 @@ body {
   background: linear-gradient(135deg, #f3e5f5, #e1bee7);
   border-radius: 12px;
   padding: 20px;
+}
+.home-page-headers span {
+  font-weight: 600;
 }

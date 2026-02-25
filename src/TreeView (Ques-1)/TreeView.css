@@ -1,0 +1,66 @@
+.tree-node {
+  margin-left: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.tree-node-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.tree-node-row:hover {
+  background-color: #f0f4ff;
+}
+
+.tree-node-toggle {
+  cursor: pointer;
+  width: 18px;
+  text-align: center;
+}
+
+.tree-node-name {
+  font-weight: 700;
+  color: #333;
+}
+
+.tree-node-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.tree-node-btn:hover {
+  background-color: #e0e7ff;
+}
+
+.add-btn:hover {
+  color: green;
+}
+
+.delete-btn:hover {
+  color: red;
+}
+.tree-node-row img {
+    height: 19px;
+    cursor: pointer;
+}
+.tree-view-main {
+    background-image: url('../assets/BackgroundImage.png');
+    height: 88vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: auto;
+    max-height:100vh;
+    
+}
+.tree-view-width {
+    width:35vw;
+}
