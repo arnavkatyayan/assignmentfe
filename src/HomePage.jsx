@@ -24,7 +24,7 @@ function HomePage() {
                     <li><span>Frontend</span>: React.js (Functional Components, Hooks)</li>
                     <li><span>State Management</span>: useState, useEffect</li>
                     <li><span>Storage</span>: Session Storage</li>
-                    <li><span>Styling</span>: CSS, Flexbox</li>
+                    <li><span>Styling</span>: CSS, Flexbox, Tailwind CSS</li>
                     <li><span>Routing</span>: React Router DOM</li>
                     <li><span>UI Components</span>: React Bootstrap</li>
                 </ul>
@@ -53,7 +53,7 @@ function HomePage() {
                     <li><span>Frontend</span>: React.js (Functional Components, Hooks)</li>
                     <li><span>State Management</span>: useState, useEffect</li>
                     <li><span>Storage</span>: Session Storage</li>
-                    <li><span>Styling</span>: CSS, Flexbox</li>
+                    <li><span>Styling</span>: CSS, Flexbox, Tailwind CSS</li>
                     <li><span>UI Components</span>: React Bootstrap</li>
                     <li><span>Alerts & Modals</span>: SweetAlert2, React Bootstrap Modal</li>
                     <li><span>Routing</span>: React Router DOM</li>
