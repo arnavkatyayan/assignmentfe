@@ -13,7 +13,30 @@ const initialData = {
     { id: 4, title: "Setup Portfolio" }
   ]
 };
-
+sessionStorage.setItem("kanbanData", JSON.stringify(initialData));
+const initialDataTreeView = [
+  {
+    id: 1,
+    name: "Applications",
+    children: [
+      {
+        id: 2,
+        name: "Frontend",
+        children: [
+          { id: 3, name: "React App", children: [] },
+          { id: 4, name: "Vue App", children: [] }
+        ]
+      },
+      {
+        id: 5,
+        name: "Backend",
+        children: [
+          { id: 6, name: "Spring Boot API", children: [] }
+        ]
+      }
+    ]
+  }
+];
 const AddTodo = ({ show, handleClose, title, body, handleSave, todo, setTodo, handleCheckBox, checkBoxOptions, errTodo, errCheckBox, handleReset }) => {
     return (
         <Modal show={show} onHide={handleClose}>

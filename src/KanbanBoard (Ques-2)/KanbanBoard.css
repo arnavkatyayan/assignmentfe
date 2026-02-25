@@ -2,6 +2,8 @@
   display: flex;
   gap: 20px;
   padding: 20px;
+  padding:13vh;
+  animation: kanban 2s ease-in-out;
 }
 
 .column {
@@ -27,7 +29,13 @@
   text-align: center;
 }
 .kanban-board-main {
-    background-image: url('../assets/KanbanWallpaper.avif');
+    background-image: url('../assets/BackgroundImage.png');
+    height: 88vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: auto;
+    max-height:100vh;
     
 }
 .headers {
@@ -57,4 +65,41 @@
 .add-icon {
     height: 20px;
     cursor: pointer;
+}
+.instructions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    top: 55px;
+}
+.instructions li {
+    font-weight: 500;
+}
+@keyframes kanban {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.board-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.reset-btn , .add-btn {
+    width:10vw;
+    margin-top: -20px;
 }
