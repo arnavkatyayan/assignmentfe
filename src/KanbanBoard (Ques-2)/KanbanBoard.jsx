@@ -117,14 +117,13 @@ export default function KanbanBoard() {
             showCancelButton: true,
             confirmButtonColor: "#d33",
             cancelButtonColor: "#3085d6",
-            confirmButtonText: "Yes, delete it",
-            cancelButtonText: "Cancel"
+            confirmButtonText: "Yes, delete it!",
         });
 
         if (result.isConfirmed) {
             setBoard(prev => ({
                 ...prev,
-                [column]: prev[column].filter(task => task.id !== taskId)
+                [column]: prev[column].filter(task => task.id !== taskId),
             }));
 
             Swal.fire("Deleted!", "Task has been deleted.", "success");
